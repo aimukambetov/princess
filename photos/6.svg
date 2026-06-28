@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="42%" r="75%">
+      <stop offset="0" stop-color="#efe0bd"/>
+      <stop offset="60%" stop-color="#cdb487"/>
+      <stop offset="100%" stop-color="#8f7044"/>
+    </radialGradient>
+    <radialGradient id="vig" cx="50%" cy="50%" r="72%">
+      <stop offset="55%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#3a2a14" stop-opacity="0.55"/>
+    </radialGradient>
+  </defs>
+  <rect width="600" height="600" fill="url(#bg)"/>
+  <rect width="600" height="600" fill="url(#vig)"/>
+  <ellipse cx="300" cy="285" rx="205" ry="235" fill="none" stroke="#a87f25" stroke-width="4" opacity="0.8"/>
+  <ellipse cx="300" cy="285" rx="195" ry="225" fill="none" stroke="#9b1b1b" stroke-width="1.5" opacity="0.6"/>
+  <g transform="translate(300 250) scale(1.7) translate(-50 -46)" fill="#9b6b3a" opacity="0.5">
+    <path d="M50 84 C20 64 6 46 6 30 C6 16 17 8 28 8 C37 8 45 14 50 22 C55 14 63 8 72 8 C83 8 94 16 94 30 C94 46 80 64 50 84 Z"/>
+  </g>
+  <text x="300" y="470" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="40" fill="#6b4a22" opacity="0.85">фото 6</text>
+</svg>
