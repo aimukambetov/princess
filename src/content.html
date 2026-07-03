@@ -1,163 +1,40 @@
-<!-- Secret book pages — the fairy tale, laid out spread by spread.
-     Each .page is one page. Swap photos/N.svg for real photos, edit text freely.
-     data-density="hard" = stiff cover page. Keep the page count even. -->
+<!-- Secret book pages. Encrypted with the code word at build time.
+     Each spread: the golden crown on the left, a story illustration on the right.
+     14 crown pages + 14 story pages between two leather covers (crown is one file, reused). -->
 
 <div id="book-src">
 
-  <!-- front cover (leather) -->
   <div class="page page-cover" data-density="hard"></div>
 
-  <!-- title page -->
-  <div class="page">
-    <div class="frame center">
-      <h2 class="illum">Сказка<br>о доброй<br><span class="name">принцессе</span></h2>
-      <div class="divider">❦&nbsp;&nbsp;❦&nbsp;&nbsp;❦</div>
-      <p class="note">история, написанная только для тебя</p>
-    </div>
-  </div>
+  <div class="page"><img class="full" decoding="async" src="photos/crown.jpg" alt=""></div>
+  <div class="page"><img class="full" decoding="async" src="photos/1.jpg" alt="жила-была принцесса"></div>
+  <div class="page"><img class="full" decoding="async" src="photos/crown.jpg" alt=""></div>
+  <div class="page"><img class="full" decoding="async" src="photos/2.jpg" alt="башня, полная книг"></div>
+  <div class="page"><img class="full" decoding="async" src="photos/crown.jpg" alt=""></div>
+  <div class="page"><img class="full" decoding="async" src="photos/3.jpg" alt="сады замка"></div>
+  <div class="page"><img class="full" decoding="async" src="photos/crown.jpg" alt=""></div>
+  <div class="page"><img class="full" decoding="async" src="photos/4.jpg" alt="вести из-за стен замка"></div>
+  <div class="page"><img class="full" decoding="async" src="photos/crown.jpg" alt=""></div>
+  <div class="page"><img class="full" decoding="async" src="photos/5.jpg" alt="через горы верхом"></div>
+  <div class="page"><img class="full" decoding="async" src="photos/crown.jpg" alt=""></div>
+  <div class="page"><img class="full" decoding="async" src="photos/6.jpg" alt="по морю на белом корабле"></div>
+  <div class="page"><img class="full" decoding="async" src="photos/crown.jpg" alt=""></div>
+  <div class="page"><img class="full" decoding="async" src="photos/7.jpg" alt="далёкие страны и рынки"></div>
+  <div class="page"><img class="full" decoding="async" src="photos/crown.jpg" alt=""></div>
+  <div class="page"><img class="full" decoding="async" src="photos/8.jpg" alt="храбрый рыцарь клянётся"></div>
+  <div class="page"><img class="full" decoding="async" src="photos/crown.jpg" alt=""></div>
+  <div class="page"><img class="full" decoding="async" src="photos/9.jpg" alt="битва с драконом"></div>
+  <div class="page"><img class="full" decoding="async" src="photos/crown.jpg" alt=""></div>
+  <div class="page"><img class="full" decoding="async" src="photos/10.jpg" alt="стали неразлучны"></div>
+  <div class="page"><img class="full" decoding="async" src="photos/crown.jpg" alt=""></div>
+  <div class="page"><img class="full" decoding="async" src="photos/11.jpg" alt="рыцарь принёс цветы"></div>
+  <div class="page"><img class="full" decoding="async" src="photos/crown.jpg" alt=""></div>
+  <div class="page"><img class="full" decoding="async" src="photos/12.jpg" alt="ужин при свечах"></div>
+  <div class="page"><img class="full" decoding="async" src="photos/crown.jpg" alt=""></div>
+  <div class="page"><img class="full" decoding="async" src="photos/13.jpg" alt="путешествуют вместе"></div>
+  <div class="page"><img class="full" decoding="async" src="photos/crown.jpg" alt=""></div>
+  <div class="page"><img class="full" decoding="async" src="photos/14.jpg" alt="долго и счастливо — конец"></div>
 
-  <!-- intro: the castle -->
-  <div class="page">
-    <div class="frame">
-      <p class="body dropcap">В далёком краю, где небо по утрам розовеет, как лепестки шиповника, а к вечеру золотится, как мёд, на зелёном холме стоял светлый замок. И жила в нём принцесса — самая добрая во всех известных и неизвестных королевствах.</p>
-    </div>
-  </div>
-
-  <!-- the library -->
-  <div class="page">
-    <div class="frame">
-      <p class="body">Замок её был не как у других. В чужих замках хвастались золотом да коврами, а здесь самой главной комнатой была библиотека — от пола до потолка книги. Принцесса знала каждую по имени и каждую любила.</p>
-      <p class="body">И когда она читала, окна сами загорались тёплым светом — это книги радовались добрым рукам.</p>
-    </div>
-  </div>
-
-  <!-- photo: the castle -->
-  <div class="page">
-    <div class="frame photo-frame">
-      <img src="photos/1.svg" alt="наше фото">
-      <p class="caption">её замок на холме</p>
-    </div>
-  </div>
-
-  <!-- part I -->
-  <div class="page">
-    <div class="frame">
-      <div style="text-align:center">
-        <p class="illum" style="font-size:clamp(18px,3.2vw,24px)">Часть первая</p>
-        <p class="note">о том, как открывались двери</p>
-        <div class="divider sm">✦</div>
-      </div>
-      <p class="body">С самого детства ей было тесно в стенах — не оттого, что замок был плох, а оттого, что мир был так велик и так красив, что хотелось увидеть его весь.</p>
-    </div>
-  </div>
-
-  <!-- part I continued: love of beauty, sets off -->
-  <div class="page">
-    <div class="frame">
-      <p class="body dropcap">Она любила всё прекрасное: рассвет над морем, узор инея на стекле, запах дождя по тёплой земле. А книги дарили ей первые путешествия — стоило открыть страницу, и вот она уже шла по мостам незнакомых городов.</p>
-      <p class="body">Но однажды поняла: мало читать о мире — мир нужно потрогать руками. И ясным утром оседлала коня, взяла любимую книгу и отправилась в путь.</p>
-    </div>
-  </div>
-
-  <!-- photo: the road -->
-  <div class="page">
-    <div class="frame photo-frame">
-      <img src="photos/2.svg" alt="наше фото">
-      <p class="caption">в дорогу — за красотой мира</p>
-    </div>
-  </div>
-
-  <!-- part II -->
-  <div class="page">
-    <div class="frame">
-      <div style="text-align:center">
-        <p class="illum" style="font-size:clamp(18px,3.2vw,24px)">Часть вторая</p>
-        <p class="note">о добром сердце</p>
-        <div class="divider sm">✦</div>
-      </div>
-      <p class="body">Где бы она ни проезжала, с ней случалось что-то хорошее — не потому, что везло, а потому, что добро всегда возвращается тому, кто его раздаёт. Она отдала плащ замёрзшему пастушку, выходила раненую птицу, поделилась последним хлебом со старушкой у горного ручья. А старушка оказалась феей.</p>
-    </div>
-  </div>
-
-  <!-- the fairy's words -->
-  <div class="page">
-    <div class="frame center">
-      <p class="note">и фея сказала ей слова, что она запомнила навсегда</p>
-      <div class="divider sm">❦</div>
-      <p class="body" style="font-style:italic">«Красота, дитя, не в коронах и не в башнях. Красота — в том, как человек смотрит на мир и что оставляет после себя. У тебя самое доброе сердце из всех, что я встречала. И за это тебе достанется самое большое сокровище — не золото, а любовь, которую ты не будешь искать. Она найдёт тебя сама».</p>
-    </div>
-  </div>
-
-  <!-- photo: kindness -->
-  <div class="page">
-    <div class="frame photo-frame">
-      <img src="photos/3.svg" alt="наше фото">
-      <p class="caption">самое доброе сердце</p>
-    </div>
-  </div>
-
-  <!-- part III -->
-  <div class="page">
-    <div class="frame">
-      <div style="text-align:center">
-        <p class="illum" style="font-size:clamp(18px,3.2vw,24px)">Часть третья</p>
-        <p class="note">о сокровище, которого не ищут</p>
-        <div class="divider sm">✦</div>
-      </div>
-      <p class="body">Принцесса видела водопады выше башен и сады, где разом цвели все цветы на свете. Она собирала не драгоценности, а мгновения: запах моря, смех на чужом языке, тёплый вечер у костра. И каждое бережно записывала в свою книгу — ту, что всегда была с ней.</p>
-    </div>
-  </div>
-
-  <!-- the meeting -->
-  <div class="page">
-    <div class="frame">
-      <p class="body dropcap">А потом, в самом обычном месте, сбылись слова феи. Она встретила того, кто полюбил в ней всё сразу: и как она склоняется над книгой, и как загораются её глаза перед дорогой, и как замирает перед каждой красивой мелочью. А больше всего — её доброе сердце.</p>
-      <p class="body">Он не подарил ей корону. Он подарил кое-что дороже — человека, рядом с которым весь мир уже здесь.</p>
-    </div>
-  </div>
-
-  <!-- photo: the beginning -->
-  <div class="page">
-    <div class="frame photo-frame">
-      <img src="photos/4.svg" alt="наше фото">
-      <p class="caption">и это было только начало</p>
-    </div>
-  </div>
-
-  <!-- epilogue -->
-  <div class="page">
-    <div class="frame">
-      <div style="text-align:center">
-        <p class="illum" style="font-size:clamp(18px,3.2vw,24px)">Эпилог</p>
-        <div class="divider sm">✦</div>
-      </div>
-      <p class="body">С тех пор в светлом замке по вечерам всё так же горит тёплый свет в окнах библиотеки. Только книг там стало больше — ведь у каждого совместного дня появляется своя страница. Принцесса по-прежнему читает, путешествует, любуется всем красивым и согревает добротой всех вокруг.</p>
-    </div>
-  </div>
-
-  <!-- photo: our story -->
-  <div class="page">
-    <div class="frame photo-frame">
-      <img src="photos/5.svg" alt="наше фото">
-      <p class="caption">наша история продолжается</p>
-    </div>
-  </div>
-
-  <!-- finale: birthday wish -->
-  <div class="page">
-    <div class="frame center">
-      <p class="finale">С днём рождения,<br>моя принцесса</p>
-      <div class="finale-heart">♥</div>
-      <p class="note">твоя история — самая красивая на свете,<br>и я рядом на каждой странице</p>
-    </div>
-  </div>
-
-  <!-- back cover (leather) -->
-  <div class="page page-cover" data-density="hard">
-    <div class="cover-inner">
-      <p class="cover-end">конец</p>
-      <div class="cover-heart small">♥</div>
-    </div>
-  </div>
+  <div class="page page-cover" data-density="hard"></div>
 
 </div>

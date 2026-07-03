@@ -1,7 +1,7 @@
 // Build step: inline photos -> encrypt content with the code word -> write dist/index.html
 // Nothing readable (message or photos) ends up in the output without the code word.
-import { readFileSync, writeFileSync, readdirSync, copyFileSync, existsSync } from 'node:fs';
-import { webcrypto as crypto } from 'node:crypto';
+import { readFileSync, writeFileSync, readdirSync, copyFileSync, existsSync, mkdirSync, rmSync } from 'node:fs';
+import { webcrypto as crypto, createHash } from 'node:crypto';
 
 const root = new URL('./', import.meta.url);
 const cfg = JSON.parse(readFileSync(new URL('./config.json', root), 'utf8'));
@@ -9,18 +9,24 @@ const codeWord = cfg.codeWord;
 if (!codeWord) { console.error('config.json: codeWord is required'); process.exit(1); }
 
 const ITER = 200000;
-const MIME = { svg:'image/svg+xml', jpg:'image/jpeg', jpeg:'image/jpeg', png:'image/png', webp:'image/webp', gif:'image/gif' };
 
-// 1. read content, strip HTML comments, inline every <img src="photos/...">
+// 1. read content, strip HTML comments; emit each photo as a hash-named file and rewrite its src.
+//    The src lives only inside the encrypted blob, so the (unguessable) file names stay hidden
+//    until the page is unlocked with the code word — keeps index.html tiny and the story secret.
 let content = readFileSync(new URL('./src/content.html', root), 'utf8')
   .replace(/<!--[\s\S]*?-->/g, '');
+const photosDir = new URL('./dist/photos/', root);
+rmSync(photosDir, { recursive: true, force: true });
+mkdirSync(photosDir, { recursive: true });
 let photoCount = 0;
 content = content.replace(/src="(photos\/[^"]+)"/g, (_, rel) => {
   const buf = readFileSync(new URL('./' + rel, root));
   const ext = rel.split('.').pop().toLowerCase();
-  const mime = MIME[ext] || 'application/octet-stream';
+  const hash = createHash('sha256').update(buf).digest('hex').slice(0, 20);
+  const name = 'photos/' + hash + '.' + ext;
+  writeFileSync(new URL('./dist/' + name, root), buf);
   photoCount++;
-  return `src="data:${mime};base64,${buf.toString('base64')}"`;
+  return `src="${name}"`;
 });
 
 // 2. encrypt: PBKDF2-SHA256 -> AES-GCM-256
@@ -60,4 +66,4 @@ for (const name of ['music.mp3', 'music.m4a', 'music.ogg', 'music.wav']) {
 }
 
 const kb = Math.round(out.length / 1024);
-console.log(`built dist/index.html  (${photoCount} photos inlined, ${kb} KB, encrypted; ${assetCount} assets copied)`);
+console.log(`built dist/index.html  (${kb} KB, ${photoCount} photos -> dist/photos/ hashed & encrypted refs; ${assetCount} assets copied)`);
